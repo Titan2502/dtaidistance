@@ -460,7 +460,7 @@ class LinkageTree(BaseTree):
             dists_cond[idx:idx + len(series) - r - 1] = dists[r, r + 1:]
             idx += len(series) - r - 1
 
-        self.linkage = linkage(dists_cond, method='complete', metric='euclidean')
+        self.linkage = linkage(dists_cond, method='ward', metric='euclidean')
 
     def _size_cond(self, size):
         n = int(size)
